@@ -1,0 +1,65 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "default": {
+            "format": "[%(asctime)s][%(name)s][%(levelname)s] %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S"
+        },
+        "detailed": {
+            "format": "[%(asctime)s][%(filename)s(%(lineno)d)][%(funcName)s()]%(levelname)s: %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "detailed",
+            "stream": "ext://sys.stdout"
+        },
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "detailed",
+            "filename": "logs/app.log",
+            "maxBytes": 10485760,
+            "backupCount": 3,
+            "encoding": "utf8"
+        },
+        "errorFile": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "ERROR",
+            "formatter": "detailed",
+            "filename": "logs/errors.log",
+            "maxBytes": 10485760,
+            "backupCount": 3,
+            "encoding": "utf8"
+        },
+        "infoFile": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "INFO",
+            "formatter": "detailed",
+            "filename": "logs/info.log",
+            "maxBytes": 10485760,
+            "backupCount": 3,
+            "encoding": "utf8"
+        }
+    },
+    "loggers": {
+        "": {
+            "level": "INFO",
+            "handlers": ["console", "file", "infoFile", "errorFile"]
+        },
+        "consoleLogger": {
+            "level": "INFO",
+            "handlers": ["console"],
+            "propagate": false
+        },
+        "devLogger": {
+            "level": "DEBUG",
+            "handlers": ["console", "file", "infoFile", "errorFile"],
+            "propagate": false
+        }
+    }
+}

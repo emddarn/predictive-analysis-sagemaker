@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "salary-prediction-sagemaker"
+version = "0.1.0"
+description = "Linear regression to predict"
+authors = ["Arifur Rahman <md.arifur.rahman056@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+seaborn = "^0.13.2"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
