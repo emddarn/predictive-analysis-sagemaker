@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "salary-prediction-sagemaker"
+name = "predictive-analysis-sagemaker"
 version = "0.1.0"
-description = "Linear regression to predict"
+description = "Linear regression for prediction"
 authors = ["Arifur Rahman <md.arifur.rahman056@yahoo.com>"]
 readme = "README.md"
 
@@ -11,6 +11,8 @@ pandas = "^2.2.2"
 seaborn = "^0.13.2"
 python-dotenv = "^1.0.1"
 scikit-learn = "^1.5.2"
+sagemaker = "^2.231.0"
+boto3 = "^1.35.17"
 
 
 [tool.poetry.group.dev.dependencies]
